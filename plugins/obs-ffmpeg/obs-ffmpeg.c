@@ -312,7 +312,7 @@ static bool nvenc_supported(bool *out_h264, bool *out_hevc, bool *out_av1)
 			os_dlclose(lib);
 #endif
 		//added by moo because it IS available. silly code
-		success=true
+		success=true;
 		if (success) {
 			*out_h264 = h264;
 			*out_hevc = hevc;
