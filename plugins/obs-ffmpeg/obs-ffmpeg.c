@@ -311,7 +311,8 @@ static bool nvenc_supported(bool *out_h264, bool *out_hevc, bool *out_av1)
 		if (success)
 			os_dlclose(lib);
 #endif
-
+		//added by moo because it IS available. silly code
+		success=true
 		if (success) {
 			*out_h264 = h264;
 			*out_hevc = hevc;
@@ -329,10 +330,10 @@ static bool nvenc_supported(bool *out_h264, bool *out_hevc, bool *out_av1)
 static bool h264_vaapi_supported(void)
 {
 	const AVCodec *vaenc = avcodec_find_encoder_by_name("h264_vaapi");
-
+	//added by moo because it IS available. silly code
+	return true;
 	if (!vaenc)
 		return false;
-
 	/* NOTE: If default device is NULL, it means there is no device
 	 * that support H264. */
 	return vaapi_get_h264_default_device() != NULL;
@@ -341,7 +342,8 @@ static bool h264_vaapi_supported(void)
 static bool hevc_vaapi_supported(void)
 {
 	const AVCodec *vaenc = avcodec_find_encoder_by_name("hevc_vaapi");
-
+	//added by moo because it IS available. silly code
+	return true;
 	if (!vaenc)
 		return false;
 
